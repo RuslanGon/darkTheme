@@ -1,0 +1,41 @@
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;     
+    text-align: center;      
+    min-height: 80vh;
+    padding: 60px 20px 20px 20px; 
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                      url('../../assets/town.jpg');
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
+}
+  
+.title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff; 
+}
+  
+.text {
+    max-width: 600px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+  
+.homeLink {
+    display: inline-block;
+    padding: 10px 20px;
+border: 1px solid white;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.homeLink:hover {
+    background-color: #a48b6e;
+}
