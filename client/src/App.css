@@ -1,0 +1,23 @@
+/* Светлая тема */
+body {
+    --bg-color: #fff;
+    --text-color: #000;
+    --nav-bg: #f0f0f0;
+    --nav-link-bg: #B29F7E;
+    --nav-link-hover-bg: #a48b6e;
+    --card-bg: #f9f9f9; /* фон карточек */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  /* Темная тема */
+  body.dark {
+    --bg-color: #172234;
+    --text-color: #fff;
+    --nav-bg: #172234;
+    --nav-link-bg: #B29F7E;
+    --nav-link-hover-bg: #a48b6e;
+    --card-bg: #1e2a3b; /* фон карточек темный */
+  }
+  

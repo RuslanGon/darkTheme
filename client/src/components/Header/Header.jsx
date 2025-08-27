@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice.js";
@@ -8,21 +8,44 @@ const Header = () => {
   const { user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark"); // просто строка
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkMode]);
+  
+  
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate("/"); 
+    navigate("/");
   };
+
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.logo}>Zenbit Tech</Link>
+
       <nav>
+        {/* Переключатель темы */}
+        <div className={styles.toggleSwitch}>
+          <input 
+            type="checkbox" 
+            id="theme-toggle" 
+            checked={darkMode} 
+            onChange={() => setDarkMode(!darkMode)} 
+          />
+          <label htmlFor="theme-toggle" className={styles.switchLabel}></label>
+        </div>
+
         {user ? (
           <div className={styles.userMenu}>
             <span className={styles.userName}>Hello, {user.name}</span>
-            <Link to="/applications" className={styles.navLink}> Add applications</Link>
-            <Link to="/my-app" className={styles.navLink}> My applications</Link>
-
+            <Link to="/applications" className={styles.navLink}>Add applications</Link>
+            <Link to="/my-app" className={styles.navLink}>My applications</Link>
             <button onClick={handleLogout} className={styles.logoutButton}>Logout</button>
           </div>
         ) : (

@@ -3,8 +3,8 @@ import axios from "axios";
 
 // базовый URL твоего backend
 const API = axios.create({
-  // baseURL: "http://localhost:5000",
-  baseURL: "https://zenbit-tech.onrender.com",
+  baseURL: "http://localhost:5000",
+  // baseURL: "https://zenbit-tech.onrender.com",
 });
 
 // Устанавливаем токен в заголовки
